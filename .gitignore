@@ -1,2 +1,8 @@
-Module-1/dist
-Module-2/dist
+# macOS system files
+.DS_Store
+
+# Build outputs
+dist/
+
+# Dependencies
+node_modules/
