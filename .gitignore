@@ -7,4 +7,12 @@ dist/
 # Dependencies
 node_modules/
 
+# IDE / Editor
+.vscode/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
 session.txt
