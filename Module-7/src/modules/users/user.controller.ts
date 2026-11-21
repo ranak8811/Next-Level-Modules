@@ -22,10 +22,12 @@ const createUser = async (req: Request, res: Response) => {
 };
 
 const getAllUsers = async (req: Request, res: Response) => {
+  console.log("From contoller: ", req.user);
+
   try {
     const result = await userService.getAllUsersFromDB();
 
-    console.log(result);
+    // console.log(result);
     res.status(201).send({
       success: true,
       message: "users retrieved",
@@ -46,7 +48,7 @@ const getSingleUser = async (req: Request, res: Response) => {
 
     const result = await userService.getSingleUserFromDB(id as string);
 
-    console.log(result);
+    // console.log(result);
 
     if (result.rowCount === 0) {
       return res.status(404).send({
@@ -77,7 +79,7 @@ const updateUser = async (req: Request, res: Response) => {
 
     const result = await userService.updateUserOnDB(req.body, id as string);
 
-    console.log(result);
+    // console.log(result);
 
     if (result.rowCount === 0) {
       return res.status(404).send({
@@ -108,7 +110,7 @@ const deleteUser = async (req: Request, res: Response) => {
 
     const result = await userService.deleteUserFromDB(id as string);
 
-    console.log(result);
+    // console.log(result);
 
     if (result.rowCount === 0) {
       return res.status(404).send({

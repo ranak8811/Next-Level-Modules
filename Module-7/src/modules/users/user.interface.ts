@@ -3,6 +3,7 @@ export interface IUser {
   email: string;
   password: string;
   age?: number | null;
+  role?: string;
 }
 
 export interface IUpdateUser extends IUser {
